@@ -6,7 +6,7 @@
  */
 
 
-#define MAX_PRECISION   (10)
+#define MAX_PRECISION   10
 static const double rounders[MAX_PRECISION + 1] =
 {
     0.5,                // 0
@@ -41,7 +41,7 @@ char * ftoa(double f, char * buf, int precision)
         *ptr++ = '-';
     }
 
-    if (precision < 0)  // negative precision == automatic precision guess
+    if (precision < 0)
     {
         if (f < 1.0) precision = 6;
         else if (f < 10.0) precision = 5;
@@ -56,7 +56,7 @@ char * ftoa(double f, char * buf, int precision)
     if (precision)
         f += rounders[precision];
 
-    // integer part...
+    // integer part
     intPart = f;
     f -= intPart;
 
