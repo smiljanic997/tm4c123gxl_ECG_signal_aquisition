@@ -23,6 +23,7 @@
 #include "pulseoximeter.h"
 #include "utils/uartstdio.h"
 #include "szdos_ftoa.h"
+#include "szdos_utils.h"
 
 #define CHANNEL_0_UNIPOLAR (LTC2309_CH0 | LTC2309_UNIPOLAR_MODE)
 
@@ -41,10 +42,8 @@ int main(void)
     {
         int32_t reading;
         reading = I2CReceive(LTC2309_I2C_ADDRESS, CHANNEL_0_UNIPOLAR);
-//        reading = reading * 5.0 / 4095.0;
-//        UARTprintf("%s\n", ftoa(reading, buf, 10));
-        UARTprintf("%d\n", reading);
-//        UARTprintf("%d\n", I2CReceive(LTC2309_I2C_ADDRESS, CHANNEL_0_UNIPOLAR));
-        SysCtlDelay(1000000);
+        f = reading * 5.0 / 4095.0;
+        UARTprintf("%s\n", ftoa(f, buf, 10));
+        delay_us(4);
     }
 }
