@@ -40,10 +40,6 @@ def log_to_csv(file_name):
                 # print(decoded)
         except ValueError as ex:
            continue
-        # TODO
-        except KeyboardInterrupt:
-            print('Plotting finished.')
-            break
 
 
 def animate(i):
