@@ -20,7 +20,6 @@
 #include "driverlib/gpio.h"
 #include "driverlib/pin_map.h"
 #include "driverlib/rom.h"
-#include "pulseoximeter.h"
 #include "utils/uartstdio.h"
 #include "szdos_ftoa.h"
 #include "szdos_utils.h"
