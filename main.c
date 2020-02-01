@@ -43,6 +43,6 @@ int main(void)
         reading = I2CReceive(LTC2309_I2C_ADDRESS, CHANNEL_0_UNIPOLAR);
         f = reading * 5.0 / 4095.0;
         UARTprintf("%s\n", ftoa(f, buf, 10));
-        delay_us(4);
+        delay_ms(1);
     }
 }
